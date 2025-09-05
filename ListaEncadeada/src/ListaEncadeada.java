@@ -40,76 +40,45 @@ public class ListaEncadeada {
         }
     }
 
-    public void insereDepois(int posicao, int informacao){
+    public void insereDepois(int posicao, int informacao) {
         Node no = new Node();
+        int contador = 0;
+        Node atual = Lista;
+        while (contador < posicao && atual != null) {
+            atual = atual.getProximo();
+            ++contador;
+        }
+
+        if (atual == null) {
+            throw new IllegalArgumentException("Posição " + posicao + " é inválida ou não existe na lista.");
+        }
+
+        no.setProximo(atual.getProximo());
         no.setInformacao(informacao);
-        if(Lista == null )
-        {
+        atual.setProximo(no);
+    }
+
+
+    public void insereOrdenado(int info) {
+        Node no = new Node();
+        Node atual = Lista;
+        int contador = 1;
+        while (atual.getProximo().getInformacao() <= info && atual.getProximo() != null) {
+            atual = atual.getProximo();
+            ++contador;
+        }
+        if (contador == 1) {
+            no.setProximo(atual);
             Lista = no;
+        } else {
+            no.setProximo(atual.getProximo());
+            atual.setProximo(no);
         }
-        else {
-            Node atual = Lista;
-            int aux = 0;
-            //enquanto houver um nó válido. Aqui vai passar por toda lista
-            while (atual != null) {
-                if (aux == posicao) {
-                    //armazena o proximo node
-                    Node proximo = atual.getProximo();
-                    //colocar depois do atual que foi informado pelo usuário
-                    atual.setProximo(no);
-                    no.setProximo(proximo);
-                    break;
-                }
-                //atualiza para pegar o proximo valor
-                atual = atual.getProximo();
-                aux++;
-            }
-
-        }
+        no.setInformacao(info);
     }
 
-    public void insereOrdenado(int informacao){
-        Node no = new Node();
-        no.setInformacao(informacao);
 
-        if (Lista == null){
-            Lista=no;
-        }
-        else{
-            Node atual = Lista;
-            while(atual != null){
 
-                //caso 1: se o novo nó for menor que o primeiro nó da lista
-                if(no.getInformacao() < Lista.getInformacao()) {
-                    Node primeiro = Lista;
-                    no.setProximo(primeiro);
-                    Lista = no;
-                    break;
-                }
-
-                //caso 2: se o valor do novo nó estiver entre dois nós no meio da lista
-                if (no.getInformacao() > atual.getInformacao() &&
-                    (atual.getProximo() != null && no.getInformacao() < atual.getProximo().getInformacao())) {
-                    //armazenar o valor do proximo do valor atual
-                    Node proximo = atual.getProximo();
-                    //colocar o novo valor depois do atual
-                    atual.setProximo(no);
-                    no.setProximo(proximo);
-                    break;
-
-                }
-
-                //caso 3: se percorreu toda lista e ainda não foi inserido -> o novo nó ira ser o maior e irá ficar no final
-                if (atual.getProximo() == null && no.getInformacao() > atual.getInformacao()){
-                    atual.setProximo(no);
-                    break;
-                }
-
-                atual = atual.getProximo();
-            }
-
-        }
-    }
 
     public void removePrimeiro(){
         if (Lista == null){

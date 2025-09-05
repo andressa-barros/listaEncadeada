@@ -31,11 +31,11 @@ public class Main {
 //        int newItem = scanner.nextInt();
 //        lista.insereDepois(posicao, newItem);
 
-        // Fase 4 - Inserir ordenado
-//        System.out.println("Digite o valor que vai ser inserido:");
-//        int i = scanner.nextInt();
-//
-//        lista.insereOrdenado(i);
+         //Fase 4 - Inserir ordenado
+        System.out.println("Digite o valor que vai ser inserido:");
+        int i = scanner.nextInt();
+
+        lista.insereOrdenado(i);
 
         // Fase 5 - Remove o primeiro da lista
 //        lista.removePrimeiro();
