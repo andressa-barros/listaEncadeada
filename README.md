@@ -23,3 +23,42 @@ Projeto em Java que implementa a estrutura de dados **Lista Simplesmente Encadea
 1. Navegue pelo painel de projetos até a pasta `src`.
 2. Clique com o botão direito no arquivo `Main.java`.
 3. Selecione **Run 'Main.main()'** (ou atalho `Shift + F10`).
+
+### Demonstração de saída
+
+```text
+-----Cria a lista encadeada-----
+Digite os itens da lista (digite '0' para parar):
+1
+2
+3
+0
+1 -> 2 -> 3 -> Null
+-----Insere o novo nó sempre na primeira posição-----
+Digite o valor que vai ser inserido:
+4
+4 -> 1 -> 2 -> 3 -> Null
+-----Insere novo nó depois de uma posição específica-----
+Digite em que posicao voce quer inserir depois o nó:
+1
+Digite o valor que vai ser inserido:
+5
+4 -> 1 -> 5 -> 2 -> 3 -> Null
+-----Insere o novo nó de forma ordenada-----
+Digite o valor que vai ser inserido:
+6
+4 -> 1 -> 5 -> 2 -> 3 -> 6 -> Null
+-----Remove o primeiro nó da lista-----
+Valor removido: 4
+1 -> 5 -> 2 -> 3 -> 6 -> Null
+-----Remove o último nó da lista-----
+Valor removido: 6
+1 -> 5 -> 2 -> 3 -> Null
+-----Remove o nó de acordo com o índice-----
+Nó removido no indíce: 1
+Nó removido: 5
+1 -> 2 -> 3 -> Null
+-----Exibe a lista final-----
+Lista Encadeada:
+1 -> 2 -> 3 -> Null
+```
