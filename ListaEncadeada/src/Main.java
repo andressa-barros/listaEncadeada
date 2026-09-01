@@ -5,7 +5,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ListaEncadeada lista = new ListaEncadeada();
 
-        // Fase 1 - criar a lista
+        System.out.println("-----Cria a lista encadeada-----");
         System.out.println("Digite os itens da lista (digite '0' para parar):");
         while (true) {
             int item = scanner.nextInt();
@@ -14,38 +14,42 @@ public class Main {
                 break;
             }
             lista.inserir(item);
-
-
         }
 
-        // Fase 2 - Inserir o item sempre na primeira posição
-//
-//        System.out.println("Digite o valor que vai ser inserido:");
-//        int info = scanner.nextInt();
-//        lista.inserePrimeiro(3);
 
-        // Fase 3 - Inserir depois de uma posição
-//        System.out.println("Digite em que posicao voce quer inserir depois o nó:");
-//        int posicao = scanner.nextInt();
-//        System.out.println("Digite o valor que vai ser inserido:");
-//        int newItem = scanner.nextInt();
-//        lista.insereDepois(posicao, newItem);
+        System.out.println("-----Insere o novo nó sempre na primeira posição-----");
+        System.out.println("Digite o valor que vai ser inserido:");
+        int info = scanner.nextInt();
+        lista.inserePrimeiro(info);
+        lista.imprime();
 
-         //Fase 4 - Inserir ordenado
+        System.out.println("-----Insere novo nó depois de uma posição específica-----");
+        System.out.println("Digite em que posicao voce quer inserir depois o nó:");
+        int posicao = scanner.nextInt();
+        System.out.println("Digite o valor que vai ser inserido:");
+        int newItem = scanner.nextInt();
+        lista.insereDepois(posicao, newItem);
+        lista.imprime();
+
+        System.out.println("-----Insere o novo nó de forma ordenada-----");
         System.out.println("Digite o valor que vai ser inserido:");
         int i = scanner.nextInt();
-
         lista.insereOrdenado(i);
+        lista.imprime();
 
-        // Fase 5 - Remove o primeiro da lista
-//        lista.removePrimeiro();
+        System.out.println("-----Remove o primeiro nó da lista-----");
+        lista.removePrimeiro();
+        lista.imprime();
 
-        // Fase 6 - Remove o último da lista
-//        lista.removeUltimo();
+        System.out.println("-----Remove o último nó da lista-----");
+        lista.removeUltimo();
+        lista.imprime();
 
-        // Fase 7 - Remove de acordo com o índice
-//        lista.remove(1);
-        // Exibir lista final
+        System.out.println("-----Remove o nó de acordo com o índice-----");
+        lista.remove(1);
+        lista.imprime();
+
+        System.out.println("-----Exibe a lista final-----");
         System.out.println("Lista Encadeada:");
         lista.imprime();
     }
