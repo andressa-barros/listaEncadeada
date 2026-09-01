@@ -24,6 +24,8 @@ Projeto em Java que implementa a estrutura de dados **Lista Simplesmente Encadea
 2. Clique com o botão direito no arquivo `Main.java`.
 3. Selecione **Run 'Main.main()'** (ou atalho `Shift + F10`).
 
+---
+
 ### Demonstração de saída
 
 ```text
